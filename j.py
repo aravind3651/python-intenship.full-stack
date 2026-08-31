@@ -1,0 +1,10 @@
+n=int(input("Enter the number of students to enter: "))
+file=open("aravind.txt","a")
+for i in range(n):
+ name=input("enter the name")
+ age=int(input("enter your age"))
+ course=input("enter your cource")
+ file.write(name +"\n")
+ file.write(str(age) + "\n")
+ file.write(course + "\n")
+file.close()
