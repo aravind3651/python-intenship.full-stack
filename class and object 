@@ -1,0 +1,8 @@
+class Dog:
+    def walk(self):
+        print("dog walks")
+    def eat(self):
+        print("dog eats")
+p=Dog()
+p.walk()
+p.eat()
