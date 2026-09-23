@@ -1,0 +1,11 @@
+products=[]
+n=int(input("Enter number of products: "))
+for i in range(n):
+    name=input("enter the product: ")
+    price=int(input("Input the prices; "))
+    quantity=int(input("Enter the number quantity: "))
+product={"name" : name,
+         "Price" : price,
+         "quantity" : quantity}
+products=products.append(product)
+print(product)
