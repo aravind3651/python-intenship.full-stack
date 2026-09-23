@@ -1,0 +1,7 @@
+a=input("enter a string")
+print(a)
+m=a.upper()
+print(m)
+v=a.lower()
+print(v)
+print(a[:5])
