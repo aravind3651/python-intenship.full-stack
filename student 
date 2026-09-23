@@ -1,0 +1,9 @@
+student={"name":"mutturaj",
+        "age":21,
+        "cource":"BCA",
+        "marks":70}
+print(student)
+if student["marks"]>=40:
+    print("you have passed")
+else:
+    print("better luck next time")
