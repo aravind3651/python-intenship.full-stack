@@ -1,0 +1,57 @@
+from abc import ABC
+class Account(ABC):
+    def __init__(self, name, balance, pin):
+        self.name = name
+        self.__balance = balance  
+        self.__pin = pin
+
+    def check_balance(self, pin):
+        if pin == self.__pin:
+            return self.__balance
+        return "Wrong PIN"
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount, pin):
+        if pin != self.__pin:
+            return "Wrong PIN"
+        if amount > self.__balance:
+            return "Insufficient balance"
+        self.__balance -= amount
+        return "Withdrawal successful"
+
+    
+    
+class SavingsAccount(Account):
+    def interest(self):
+        return self.check_balance("1234") * 0.04
+
+name = input("Enter customer name: ")
+balance = float(input("Enter initial balance: "))
+pin = input("Enter PIN: ")
+
+account = SavingsAccount(name, balance, pin)
+
+print("\n1. Check Balance")
+print("2. Deposit")
+print("3. Withdraw")
+
+choice = input("Enter choice: ")
+
+if choice == "1":
+    print("Balance:", account.check_balance(pin))
+
+elif choice == "2":
+    amount = float(input("Enter deposit amount: "))
+    account.deposit(amount)
+    print("Deposit successful!")
+    print("Balance:", account.check_balance(pin))
+
+elif choice == "3":
+    amount = float(input("Enter withdrawal amount: "))
+    print(account.withdraw(amount, pin))
+    print("Balance:", account.check_balance(pin))
+
+else:
+    print("Invalid choice")
