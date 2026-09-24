@@ -1,0 +1,24 @@
+class Employee:
+    def __init__(self,name,salary):
+        self.name=name
+        self.salary=salary
+    def calculate_pay(self):
+        return self.salary
+class Manager(Employee):
+    def calculate_pay(self):
+        return self.salary + 500 * 5
+class Developer(Employee):
+    def calculate_pay(self):
+        return self.salary + 1000
+class Intern(Employee):
+    def calculate_pay(self):
+        return 15000
+def payroll(employees):
+        for emp in employees:
+            print(emp.name,":",emp.calculate_pay())
+employees=[
+    Manager("Aravind",60000),
+    Developer("Muttu",50000),
+    Intern("vishal",0)
+]
+payroll(employees)
